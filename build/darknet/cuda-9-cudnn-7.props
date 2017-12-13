@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup>
+    <OPENCV_DIR Condition="'$(OPENCV_DIR)' == ''">$(OPENCV_3_3_PREBUILT)</OPENCV_DIR>
+  </PropertyGroup>
+  <PropertyGroup>
+    <CUDA_PATH Condition="'$(CUDA_PATH)' == ''">$(CUDA_PATH_V9_0)</CUDA_PATH>
+  </PropertyGroup>
+  <PropertyGroup>
+    <CUDNN Condition="'$(CUDNN)' == ''">$(cudnn_7_cuda_9)</CUDNN>
+  </PropertyGroup>
+  <ItemDefinitionGroup />
+  <ItemGroup />
+</Project>
