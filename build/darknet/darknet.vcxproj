@@ -218,6 +218,7 @@
     <ClCompile Include="..\..\src\normalization_layer.c" />
     <ClCompile Include="..\..\src\option_list.c" />
     <ClCompile Include="..\..\src\parser.c" />
+    <ClCompile Include="..\..\src\prepare_dataset.c" />
     <ClCompile Include="..\..\src\region_layer.c" />
     <ClCompile Include="..\..\src\reorg_layer.c" />
     <ClCompile Include="..\..\src\rnn.c" />
