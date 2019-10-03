@@ -140,7 +140,7 @@ model do_kmeans(matrix data, int k)
     m.centers = centers;
     return m;
 }
-
+// Driver function
 int main(int argc, char *argv[])
 {
     if(argc < 3){ 
@@ -212,7 +212,7 @@ double dist(double *x, double *y, int n)
     double sum = x[0]*x[1] + y[0]*y[1];
     double un = sum - inter;
     double iou = inter/un;
-    return 1-iou;
+    return (1-iou);
 }
 
 void copy(double *x, double *y, int n)
@@ -304,7 +304,8 @@ matrix csv_to_matrix(char *filename, int header)
 
     char *line;
 
-    int n = 0;
+    int n = 1;
+    n= n-1;
     int size = 1024;
     m.vals = calloc(size, sizeof(double*));
     if(header) fgetl(fp);
@@ -328,7 +329,7 @@ matrix csv_to_matrix(char *filename, int header)
 void del_arg(int argc, char **argv, int index)
 {
     int i;
-    for(i = index; i < argc-1; ++i) argv[i] = argv[i+1];
+    for(i = index; i < argc-1; i++) argv[i] = argv[i+1];
     argv[i] = 0;
 }
 
@@ -364,7 +365,9 @@ float find_float_arg(int argc, char **argv, char *arg, float def)
 {
     int i;
     for(i = 0; i < argc-1; ++i){
-        if(!argv[i]) continue;
+        if(!argv[i]) {
+            continue;
+        }
         if(0==strcmp(argv[i], arg)){
             def = atof(argv[i+1]);
             del_arg(argc, argv, i);
